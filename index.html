@@ -1,0 +1,489 @@
+<!doctype html>
+<!--
+THESIS: A candidate case file turns resume choices and job evidence into one operational packet, refusing the generic job-board dashboard.
+OWN-WORLD: Cool paper, carbon rules, signal-yellow file tabs, proof-red cautions, stacked sheets, and dense evidence rows.
+STORY: Understand the search, compare ten truthful one-page resumes, answer twenty missing questions, then triage fifty sourced roles.
+FIRST VIEWPORT: A sticky tab rail frames a mission brief beside a live resume proof and the first ranked-role signals; the primary action opens the resume contact sheet.
+FORM: An application-operations runbook with an edge-to-edge comparison workbench; the resume sheet is the recurring visual object and dossier expansion is the signature interaction.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A private-source-safe resume comparison and job-search case file for Duncan Bartley."
+    />
+    <title>Help Duncan — Candidate Case File</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to case file</a>
+
+    <nav class="case-rail" aria-label="Case file sections">
+      <a class="case-mark" href="#overview" aria-label="Help Duncan overview">
+        <span class="case-mark__glyph" aria-hidden="true">HD</span>
+        <span>Help Duncan</span>
+      </a>
+      <div class="case-tabs">
+        <a class="case-tab is-active" href="#overview" data-section="overview">
+          <span class="case-tab__count">A</span>
+          <span>Mission</span>
+        </a>
+        <a class="case-tab" href="#resumes" data-section="resumes">
+          <span class="case-tab__count">10</span>
+          <span>Resumes</span>
+        </a>
+        <a class="case-tab" href="#questions" data-section="questions">
+          <span class="case-tab__count">20</span>
+          <span>Questions</span>
+        </a>
+        <a class="case-tab" href="#roles" data-section="roles">
+          <span class="case-tab__count">50</span>
+          <span>Roles</span>
+        </a>
+        <a class="case-tab" href="#methodology" data-section="methodology">
+          <span class="case-tab__count">M</span>
+          <span>Method</span>
+        </a>
+        <a class="case-tab" href="#prompts" data-section="prompts">
+          <span class="case-tab__count">“”</span>
+          <span>Prompts</span>
+        </a>
+        <a class="case-tab" href="#notes" data-section="notes">
+          <span class="case-tab__count">?</span>
+          <span>Notes</span>
+        </a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section class="case-opening observed-section" id="overview" aria-labelledby="overview-title">
+        <header class="opening-header">
+          <div>
+            <p class="file-stamp">Candidate case file / working draft</p>
+            <h1 id="overview-title">Make the evidence easier to use.</h1>
+          </div>
+          <div class="status-block" aria-label="Project status">
+            <span class="status-block__label">Status</span>
+            <strong>Ready for Duncan’s answers</strong>
+            <span>TrueUp snapshot: July 27, 2026</span>
+          </div>
+        </header>
+
+        <div class="opening-workbench">
+          <div class="mission-sheet">
+            <h2>Mission / status</h2>
+            <p class="mission-lede">
+              Turn one crowded two-page resume into a sharper one-page story, then connect that story
+              to roles an application helper can verify and pursue with Duncan’s approval.
+            </p>
+            <dl class="mission-grid">
+              <div>
+                <dt>Candidate</dt>
+                <dd>Duncan Bartley</dd>
+              </div>
+              <div>
+                <dt>Current signal</dt>
+                <dd>Data engineering + stewardship</dd>
+              </div>
+              <div>
+                <dt>Target market</dt>
+                <dd>Remote US + Washington, DC area</dd>
+              </div>
+              <div>
+                <dt>Unknowns</dt>
+                <dd>Comp, exact titles, commute, authorization</dd>
+              </div>
+            </dl>
+            <div class="mission-actions">
+              <a class="action-tab" href="#resumes">Compare 10 directions</a>
+              <a class="text-action" href="#questions">Answer the search questions →</a>
+            </div>
+            <div class="truth-note">
+              <strong>Truth boundary</strong>
+              <span>Real experience stays. Phone, email, and LinkedIn are placeholders. No new metrics were invented.</span>
+            </div>
+          </div>
+
+          <div class="opening-proof" aria-label="Live resume proof">
+            <div class="opening-proof__label">
+              <span>Live proof</span>
+              <span>Direction 1 / 10</span>
+            </div>
+            <div id="hero-resume" class="hero-resume"></div>
+          </div>
+
+          <div class="opening-roles" aria-label="First role signals">
+            <div class="opening-roles__head">
+              <span>First signals</span>
+              <a href="#roles">Open all 50</a>
+            </div>
+            <ol id="hero-roles" class="signal-list"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section observed-section" id="resumes" aria-labelledby="resumes-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Comparison workbench</p>
+            <h2 id="resumes-title">Ten one-page resume directions</h2>
+          </div>
+          <p>
+            Each version uses the same source experience. What changes is the lead story, bullet
+            selection, and keyword emphasis. Click any sheet to inspect it at full size.
+          </p>
+        </div>
+        <div id="resume-contact-sheet" class="resume-contact-sheet" aria-live="polite"></div>
+      </section>
+
+      <section class="case-section questions-section observed-section" id="questions" aria-labelledby="questions-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Intake worksheet</p>
+            <h2 id="questions-title">Twenty answers that will sharpen the search</h2>
+          </div>
+          <div class="question-actions">
+            <span id="answer-status" role="status">Answers save in this browser.</span>
+            <button class="outline-action" id="copy-answers" type="button">Copy answer brief</button>
+          </div>
+        </div>
+        <div id="question-list" class="question-list"></div>
+      </section>
+
+      <section class="case-section roles-section observed-section" id="roles" aria-labelledby="roles-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">TrueUp evidence list</p>
+            <h2 id="roles-title">Fifty sourced role dossiers</h2>
+          </div>
+          <p>
+            The priority shortlist contains target-market roles with the clearest current overlap;
+            the remaining source leads are separated as stretch or blocked. No DC-area listing
+            surfaced in this TrueUp snapshot. The editorial score is not an employer or TrueUp score.
+          </p>
+        </div>
+
+        <div class="role-workbench" aria-label="Role filters">
+          <label>
+            Search
+            <input id="role-search" type="search" placeholder="Title, company, tool…" />
+          </label>
+          <label>
+            Market
+            <select id="market-filter">
+              <option value="all">All markets</option>
+              <option value="Remote US">Remote US</option>
+              <option value="Remote - verify US eligibility">Remote — verify US eligibility</option>
+              <option value="DC area">Washington, DC area</option>
+              <option value="US onsite/hybrid">US onsite / hybrid stretch</option>
+              <option value="Outside target market">Outside target — blocker</option>
+            </select>
+          </label>
+          <label>
+            Minimum triage score
+            <select id="score-filter">
+              <option value="0">Show all 50</option>
+              <option value="70">70+ strongest</option>
+              <option value="60">60+ solid</option>
+              <option value="50">50+ adjacent</option>
+            </select>
+          </label>
+          <div class="role-result-count">
+            <span>Visible dossiers</span>
+            <strong id="role-count">50</strong>
+          </div>
+        </div>
+
+        <div class="role-ledger-head" aria-hidden="true">
+          <span>Rank</span>
+          <span>Role / company</span>
+          <span>Market</span>
+          <span>Score</span>
+          <span>Next decision</span>
+        </div>
+        <div id="role-list" class="role-list"></div>
+        <div id="role-empty" class="empty-state" hidden>
+          <strong>No dossiers match these filters.</strong>
+          <span>Clear the search or widen the market and score filters.</span>
+        </div>
+      </section>
+
+      <section
+        class="case-section methodology-section observed-section"
+        id="methodology"
+        aria-labelledby="methodology-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Methodology ledger</p>
+            <h2 id="methodology-title">How this case file was produced</h2>
+          </div>
+          <p>
+            This is an auditable first pass, not a claim that every listing is current or that every
+            resume direction is final. The ledger below distinguishes source facts, editorial
+            judgment, verification, and remaining gaps.
+          </p>
+        </div>
+
+        <ol class="method-ledger">
+          <li>
+            <span class="method-ledger__step">00</span>
+            <div>
+              <h3>Captured the brief and working constraints</h3>
+              <p>
+                Started from Byron’s request for a quick GitHub-hostable artifact, ten compact
+                one-page resume directions, a clickable contact sheet, fifty role dossiers, and a
+                workflow an application helper could use. Later clarifications preserved Duncan’s
+                real experience while replacing phone, email, and LinkedIn destinations.
+              </p>
+            </div>
+            <span class="method-ledger__status">User supplied</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">01</span>
+            <div>
+              <h3>Extracted and visually checked the two-page PDF</h3>
+              <p>
+                Extracted text from both pages, then rendered the pages to images to verify section
+                order, hierarchy, density, and the page break. The private original remains under
+                <code>source/</code> and is excluded from version control.
+              </p>
+            </div>
+            <span class="method-ledger__status">Source verified</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">02</span>
+            <div>
+              <h3>Built ten positioning directions from the same facts</h3>
+              <p>
+                Re-selected and tightened source bullets for balanced data engineering, governance,
+                SQL/ETL, analytics engineering, data quality, regulated data, integration, BI,
+                automation, and ATS-minimal versions. No new employers, responsibilities, outcomes,
+                or performance metrics were added.
+              </p>
+            </div>
+            <span class="method-ledger__status">Editorial rewrite</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">03</span>
+            <div>
+              <h3>Ran targeted TrueUp search sweeps</h3>
+              <p>
+                Used the supplied TrueUp session to collect result-card metadata across fifteen
+                search phrases. Remote results were swept separately for the core role families.
+                The combined capture produced 249 cards representing 229 unique application URLs.
+              </p>
+            </div>
+            <span class="method-ledger__status">July 27, 2026</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">04</span>
+            <div>
+              <h3>Normalized, deduplicated, and scored the role pool</h3>
+              <p>
+                Parsed title, company, sector, location, age, salary, tools, and company signals.
+                Editorial scoring rewards title, SQL/ETL, governance, quality, integration, BI,
+                regulated-domain, and target-market overlap. It penalizes location mismatch,
+                stale listings, unrelated engineering specialties, and likely seniority mismatch.
+              </p>
+            </div>
+            <span class="method-ledger__status">Rule based</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">05</span>
+            <div>
+              <h3>Separated the shortlist from source leads</h3>
+              <p>
+                The final fifty contain 19 priority-shortlist roles and 31 stretch or blocked leads.
+                Market labels include 24 explicit Remote-US, 18 remote roles requiring US-eligibility
+                verification, seven US onsite/hybrid stretches, and one outside-target blocker.
+                Twenty-two cards listed compensation. No DC-area listing surfaced in this snapshot.
+              </p>
+            </div>
+            <span class="method-ledger__status">Human-readable tiers</span>
+          </li>
+          <li>
+            <span class="method-ledger__step">06</span>
+            <div>
+              <h3>Built and verified the static handoff</h3>
+              <p>
+                Implemented dependency-free HTML, CSS, and JavaScript for GitHub Pages. Checked all
+                ten resume proofs at letter-page dimensions, desktop and mobile overflow, dialog and
+                filter behavior, browser-console errors, job/question/resume counts, and public-file
+                privacy. Intake answers remain in the visitor’s browser.
+              </p>
+            </div>
+            <span class="method-ledger__status">Checks passed</span>
+          </li>
+        </ol>
+
+        <div class="search-audit">
+          <div class="search-audit__head">
+            <div>
+              <h3>TrueUp search audit</h3>
+              <p>Counts are captured cards before URL and title/company deduplication.</p>
+            </div>
+            <dl>
+              <div><dt>Captured cards</dt><dd>249</dd></div>
+              <div><dt>Unique URLs</dt><dd>229</dd></div>
+              <div><dt>Published dossiers</dt><dd>50</dd></div>
+            </dl>
+          </div>
+          <div class="search-query-table" role="table" aria-label="TrueUp search phrases and captured-card counts">
+            <div class="search-query-row search-query-row--head" role="row">
+              <span role="columnheader">Search phrase</span>
+              <span role="columnheader">Cards</span>
+              <span role="columnheader">Purpose</span>
+            </div>
+            <div class="search-query-row" role="row"><code role="cell">data analyst</code><strong role="cell">30</strong><span role="cell">Broad analytical baseline</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data engineer</code><strong role="cell">30</strong><span role="cell">Pipeline and platform adjacency</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data governance</code><strong role="cell">30</strong><span role="cell">Stewardship, metadata, and lineage</span></div>
+            <div class="search-query-row" role="row"><code role="cell">analytics engineer</code><strong role="cell">30</strong><span role="cell">Modeling plus analytics delivery</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data operations</code><strong role="cell">30</strong><span role="cell">Production refresh and support work</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data integration</code><strong role="cell">27</strong><span role="cell">APIs, mappings, and ingestion</span></div>
+            <div class="search-query-row" role="row"><code role="cell">business intelligence analyst</code><strong role="cell">15</strong><span role="cell">Reporting-oriented analyst roles</span></div>
+            <div class="search-query-row" role="row"><code role="cell">business intelligence</code><strong role="cell">15</strong><span role="cell">Broader BI engineering and analysis</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data quality analyst</code><strong role="cell">15</strong><span role="cell">Validation and controls roles</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data quality</code><strong role="cell">14</strong><span role="cell">Broader quality and assurance sweep</span></div>
+            <div class="search-query-row" role="row"><code role="cell">reporting analyst</code><strong role="cell">7</strong><span role="cell">Recurring reporting and insights</span></div>
+            <div class="search-query-row" role="row"><code role="cell">SQL analyst</code><strong role="cell">3</strong><span role="cell">SQL-centered analysis</span></div>
+            <div class="search-query-row" role="row"><code role="cell">ETL developer</code><strong role="cell">1</strong><span role="cell">Explicit ETL title coverage</span></div>
+            <div class="search-query-row" role="row"><code role="cell">Salesforce data</code><strong role="cell">1</strong><span role="cell">CRM-data adjacency</span></div>
+            <div class="search-query-row" role="row"><code role="cell">data steward</code><strong role="cell">1</strong><span role="cell">Exact current-role vocabulary</span></div>
+          </div>
+        </div>
+
+        <div class="method-limits" aria-label="Methodology limitations">
+          <strong>Verification boundary</strong>
+          <p>
+            Dossiers are based on TrueUp result cards, not a complete review of every job
+            description. Availability, US eligibility, compensation, clearance, travel, seniority,
+            and application questions must be checked at the employer source before tailoring or
+            submitting anything.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="case-section prompts-section observed-section"
+        id="prompts"
+        aria-labelledby="prompts-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Verbatim source record</p>
+            <h2 id="prompts-title">Byron’s exact prompts</h2>
+          </div>
+          <p>
+            Wording, capitalization, spacing, and typos are preserved. Attachment contents and
+            private resume contact details are not reproduced here.
+          </p>
+        </div>
+
+        <div class="prompt-archive">
+          <article class="prompt-record">
+            <header><span>Prompt 01</span><strong>Initial brief</strong></header>
+            <pre><code>I am trying to help my friend find a job.  Create a quick new project related to improving his resume and finding remote or Washington DC area jobs relevant to his experience.
+
+Hit with me 10 question to get started.  My rough idea:
+- Grab text form his PDF resume -&gt; rework 10 ways to find a format + some lines that work -- ideally he gets things down to single line bullets, drops extra stuff, and really vertically tightens it
+- Use that resume to run through TrueUp and find roles that are a good fit
+- Generate a single HTML result that I can host on GitHub easily for him
+- I want that result to include previews of the resume - contact sheet style, click to expand to show full page (they should all be single page)
+- I also want that static HTML page to include links + a dossier on the top 50 roles you find for him.
+
+The goal is to make it easy for his agent to clean up his resume (assuem it has the source file) and then apply on this behafl to roles.</code></pre>
+          </article>
+
+          <article class="prompt-record">
+            <header><span>Prompt 02</span><strong>Source handoff</strong></header>
+            <pre><code>Here is resume and the TrueUp link (logged in as me currently)</code></pre>
+          </article>
+
+          <article class="prompt-record">
+            <header><span>Prompt 03</span><strong>First answers</strong></header>
+            <pre><code>1. Call it `help-duncan`.
+2. Done
+3. Blank out his real contact info -- make it generic name and info
+4. Boht remote and DC, I think either works
+5. Match roles and comp this exp, I don't know salaray goals</code></pre>
+          </article>
+
+          <article class="prompt-record">
+            <header><span>Prompt 04</span><strong>Privacy and intake clarification</strong></header>
+            <pre><code>Just anon the contact info and linked in links.  The experience can be exactly his.  It should be his.  We're trying to make it better.
+
+Also be sure to include a list of 20 questions for him to answer in the static site that would really dial in teh search process.</code></pre>
+          </article>
+
+          <article class="prompt-record">
+            <header><span>Prompt 05</span><strong>Audit-trail request</strong></header>
+            <pre><code>And then whne this is all done, be sure to add my exact prompts to the static HTML file too.
+
+Also include a "methodology" section that breaks down all of the various searches and other things you did on our behalf.</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section notes-section observed-section" id="notes" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Method and handoff</p>
+            <h2 id="notes-title">What the application helper should know</h2>
+          </div>
+        </div>
+        <div class="notes-ledger">
+          <article>
+            <h3>Resume source</h3>
+            <p>
+              All claims trace to Duncan’s supplied two-page PDF. The public site excludes the
+              original file and uses placeholder contact destinations.
+            </p>
+          </article>
+          <article>
+            <h3>Role source</h3>
+            <p>
+              Listings came from targeted TrueUp searches on July 27, 2026. Links, compensation,
+              locations, and availability must be rechecked before tailoring or applying.
+            </p>
+          </article>
+          <article>
+            <h3>Application authority</h3>
+            <p>
+              Research and draft by default. Do not submit, answer screening questions, or state
+              authorization, salary, clearance, or preferences until Duncan supplies and approves them.
+            </p>
+          </article>
+          <article>
+            <h3>Recommended next pass</h3>
+            <p>
+              Answer the twenty questions, choose two resume directions, add verified outcomes, then
+              re-rank roles using Duncan’s actual constraints.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="resume-dialog" class="resume-dialog" aria-labelledby="dialog-resume-title">
+      <div class="dialog-bar">
+        <div>
+          <span>Resume proof</span>
+          <strong id="dialog-resume-title">Resume direction</strong>
+        </div>
+        <div class="dialog-actions">
+          <button id="print-resume" class="outline-action" type="button">Print / save PDF</button>
+          <button id="close-resume" class="action-tab" type="button">Close</button>
+        </div>
+      </div>
+      <div id="dialog-resume-body" class="dialog-resume-body"></div>
+    </dialog>
+
+    <script src="data/resumes.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="data/jobs.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
