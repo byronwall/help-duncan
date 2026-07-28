@@ -27,6 +27,15 @@ if (resumes.some((resume) => !resume.editorialMove || !resume.impactPrompt)) {
 }
 if (resumes.some((resume) => resume.project)) failures.push("Technical projects must be woven into work experience");
 if (resumes.some((resume) => resume.summary.length > 165)) failures.push("A resume summary exceeds the compact scan limit");
+if (resumes.some((resume) => !resume.summary.includes("11+ years of business and analytics experience"))) {
+  failures.push("Every resume summary must use the full 11+ years business-and-analytics framing");
+}
+if (resumes.some((resume) => resume.current.length !== 10 || resume.analyst.length !== 6 || resume.operations.length !== 5)) {
+  failures.push("Every resume needs the complete 10/6/5 source-backed experience set");
+}
+if (resumes.some((resume) => resume.skillLines?.length !== 4)) {
+  failures.push("Every resume needs four compact skill lines");
+}
 if (
   resumes.some((resume) =>
     [...resume.current, ...resume.analyst, ...resume.operations].some((bullet) => bullet.length > 118)
@@ -36,9 +45,16 @@ if (
 }
 if (!html.includes('id="methodology"')) failures.push("Methodology section is missing");
 if (!html.includes('id="prompts"')) failures.push("Prompt archive is missing");
-if ((html.match(/class="prompt-record"/g) ?? []).length !== 6) failures.push("Expected 6 verbatim prompt records");
-if (!html.includes("Finally, review all my guidance below about reusme")) {
+if ((html.match(/class="prompt-record"/g) ?? []).length !== 13) failures.push("Expected 13 verbatim prompt records");
+if (!html.includes("And we should also avoid saying 7+ years for data.")) {
   failures.push("Latest prompt is not preserved verbatim");
+}
+if (
+  /class="truth-note"|class="hero-resume"|class="hero-roles"|Candidate case file|working draft/i.test(
+    html
+  )
+) {
+  failures.push("Removed site commentary or retired overview content is still present");
 }
 if (!html.includes("The combined capture produced 249 cards representing 229 unique application URLs.")) {
   failures.push("Search methodology totals are missing");

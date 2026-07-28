@@ -15,6 +15,7 @@ function renderBullets(items) {
 }
 
 function renderResume(variant, preview = false) {
+  const skillLines = variant.skillLines || [variant.skills];
   return `
     <article class="resume-page${preview ? " is-preview" : ""}" data-resume-id="${escapeHtml(variant.id)}">
       <header class="resume-page__header">
@@ -52,7 +53,9 @@ function renderResume(variant, preview = false) {
       </section>
       <section class="resume-block">
         <h4>CORE SKILLS</h4>
-        <p class="resume-skills">${escapeHtml(variant.skills)}</p>
+        <div class="resume-skills">
+          ${skillLines.map((line) => `<p>${escapeHtml(line)}</p>`).join("")}
+        </div>
       </section>
       <section class="resume-block">
         <h4>EDUCATION</h4>
@@ -61,36 +64,11 @@ function renderResume(variant, preview = false) {
           <p>Frederick, MD</p>
           <p><strong>Indiana University</strong> — B.A., History</p>
           <p>Bloomington, IN</p>
+          <p class="resume-recognition">Upsilon Pi Epsilon | Outstanding IT Student Award | President’s Medal for Hope</p>
         </div>
       </section>
     </article>
   `;
-}
-
-function renderHero() {
-  const heroResume = document.querySelector("#hero-resume");
-  if (heroResume && resumes[0]) {
-    heroResume.innerHTML = renderResume(resumes[0], true);
-  }
-
-  const heroRoles = document.querySelector("#hero-roles");
-  if (heroRoles) {
-    heroRoles.innerHTML = jobs
-      .filter((job) => job.tier === "Priority shortlist")
-      .slice(0, 3)
-      .map(
-        (job) => `
-          <li>
-            <span class="signal-list__rank">${String(job.rank).padStart(2, "0")}</span>
-            <div>
-              <strong>${escapeHtml(job.title)}</strong>
-              <span>${escapeHtml(job.company)} · ${escapeHtml(job.market)} · score ${job.score}</span>
-            </div>
-          </li>
-        `
-      )
-      .join("");
-  }
 }
 
 function renderContactSheet() {
@@ -405,7 +383,6 @@ function trackSections() {
   sections.forEach((section) => observer.observe(section));
 }
 
-renderHero();
 renderContactSheet();
 renderQuestions();
 filterRoles();

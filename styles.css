@@ -156,9 +156,7 @@ main {
 .case-opening {
   min-height: 100vh;
   padding: clamp(24px, 4vw, 64px);
-  background:
-    linear-gradient(var(--rule-light) 1px, transparent 1px) 0 0 / 100% 32px,
-    var(--paper);
+  background: var(--paper);
 }
 
 .opening-header,
@@ -171,7 +169,10 @@ main {
   border-bottom: 2px solid var(--ink);
 }
 
-.file-stamp,
+.opening-header {
+  grid-template-columns: 1fr;
+}
+
 .section-kicker {
   margin: 0 0 10px;
   color: var(--ink-soft);
@@ -209,48 +210,13 @@ h3 {
   margin: 0;
 }
 
-.status-block {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 5px 18px;
-  padding: 14px 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-}
-
-.status-block__label {
-  grid-row: 1 / span 2;
-  padding: 4px 8px;
-  color: var(--ink);
-  background: var(--signal);
-  font-weight: 800;
-  align-self: start;
-}
-
-.status-block strong {
-  color: var(--good);
-  font-size: 0.88rem;
-}
-
 .opening-workbench {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(310px, 0.72fr) minmax(260px, 0.65fr);
-  gap: 18px;
+  max-width: 780px;
   margin-top: clamp(24px, 5vw, 68px);
 }
 
 body.is-ready .opening-workbench > * {
   animation: align-case-file 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-body.is-ready .opening-workbench > :nth-child(2) {
-  animation-delay: 70ms;
-}
-
-body.is-ready .opening-workbench > :nth-child(3) {
-  animation-delay: 130ms;
 }
 
 @keyframes align-case-file {
@@ -268,9 +234,7 @@ body.is-ready .opening-workbench > :nth-child(3) {
   }
 }
 
-.mission-sheet,
-.opening-proof,
-.opening-roles {
+.mission-sheet {
   min-width: 0;
   background: var(--sheet);
   border: 1px solid var(--ink);
@@ -280,20 +244,6 @@ body.is-ready .opening-workbench > :nth-child(3) {
 .mission-sheet {
   position: relative;
   padding: clamp(22px, 3vw, 42px);
-}
-
-.mission-sheet::before {
-  content: "WORKING COPY";
-  position: absolute;
-  top: -12px;
-  right: 22px;
-  padding: 5px 8px;
-  color: var(--ink);
-  background: var(--signal);
-  border: 1px solid var(--ink);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 800;
 }
 
 .mission-sheet h2 {
@@ -371,98 +321,6 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
 .text-action {
   font-weight: 750;
-}
-
-.truth-note {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px 14px;
-  margin-top: 30px;
-  padding-top: 14px;
-  border-top: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-}
-
-.truth-note strong {
-  color: var(--proof);
-  font-family: var(--mono);
-}
-
-.opening-proof {
-  padding: 12px;
-  transform: translateY(20px);
-}
-
-.opening-proof__label,
-.opening-roles__head {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 7px 8px 11px;
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  font-weight: 800;
-}
-
-.hero-resume {
-  max-height: 690px;
-  overflow: hidden;
-  background: var(--folder);
-  border: 1px solid var(--rule);
-}
-
-.hero-resume .resume-page {
-  width: 100%;
-  min-height: 680px;
-}
-
-.opening-roles {
-  align-self: end;
-  margin-bottom: 28px;
-  padding: 12px;
-}
-
-.opening-roles__head {
-  border-bottom: 1px solid var(--ink);
-}
-
-.opening-roles__head a {
-  font-family: var(--ui);
-}
-
-.signal-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.signal-list li {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 10px;
-  padding: 13px 8px;
-  border-bottom: 1px solid var(--rule-light);
-}
-
-.signal-list li:last-child {
-  border-bottom: 0;
-}
-
-.signal-list__rank {
-  font-family: var(--mono);
-  font-weight: 800;
-}
-
-.signal-list strong,
-.signal-list span {
-  display: block;
-}
-
-.signal-list span {
-  margin-top: 3px;
-  color: var(--ink-soft);
-  font-size: 0.76rem;
 }
 
 .case-section {
@@ -598,12 +456,12 @@ body.is-ready .opening-workbench > :nth-child(3) {
   width: 8.5in;
   height: 11in;
   min-height: 11in;
-  padding: 0.46in 0.5in;
+  padding: 0.4in 0.5in;
   color: #111827;
   background: var(--sheet);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 11.3pt;
-  line-height: 1.22;
+  font-size: 12pt;
+  line-height: 1.28;
   overflow: hidden;
 }
 
@@ -644,7 +502,8 @@ body.is-ready .opening-workbench > :nth-child(3) {
 }
 
 .resume-block {
-  margin-top: 8px;
+  min-width: 0;
+  margin-top: 9px;
 }
 
 .resume-block h4 {
@@ -657,8 +516,7 @@ body.is-ready .opening-workbench > :nth-child(3) {
 }
 
 .resume-summary,
-.resume-skills,
-.resume-project {
+.resume-skills {
   margin: 0;
 }
 
@@ -667,15 +525,20 @@ body.is-ready .opening-workbench > :nth-child(3) {
 }
 
 .resume-skills {
+  min-width: 0;
+}
+
+.resume-skills p {
+  margin: 0;
   white-space: nowrap;
 }
 
-.resume-skills strong {
-  color: #203a5f;
+.resume-skills p + p {
+  margin-top: 1px;
 }
 
 .resume-role {
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .resume-role__line {
@@ -708,6 +571,10 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
 .resume-education p {
   margin: 0;
+}
+
+.resume-recognition {
+  grid-column: 1 / -1;
 }
 
 .questions-section {
@@ -1406,24 +1273,6 @@ body.is-ready .opening-workbench > :nth-child(3) {
 }
 
 @media (max-width: 1180px) {
-  .opening-workbench {
-    grid-template-columns: minmax(320px, 1fr) minmax(310px, 0.8fr);
-  }
-
-  .opening-roles {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
-  }
-
-  .signal-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .signal-list li {
-    border-right: 1px solid var(--rule-light);
-  }
-
   .role-workbench {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1504,17 +1353,12 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
   .opening-header,
   .section-heading,
-  .opening-workbench,
   .scan-standard {
     grid-template-columns: 1fr;
   }
 
   .scan-standard {
     gap: 22px;
-  }
-
-  .opening-proof {
-    transform: none;
   }
 
   .question-row {
@@ -1581,7 +1425,6 @@ body.is-ready .opening-workbench > :nth-child(3) {
   }
 
   .mission-grid,
-  .signal-list,
   .role-workbench,
   .evidence-columns,
   .notes-ledger,
@@ -1698,7 +1541,8 @@ body.is-ready .opening-workbench > :nth-child(3) {
   }
 
   body.is-printing-resume > :not(.resume-dialog),
-  body.is-printing-resume .dialog-bar {
+  body.is-printing-resume .dialog-bar,
+  body.is-printing-resume .resume-direction-note {
     display: none !important;
   }
 
@@ -1715,6 +1559,7 @@ body.is-ready .opening-workbench > :nth-child(3) {
   body.is-printing-resume .dialog-resume-body {
     display: block;
     padding: 0;
+    margin: 0;
   }
 
   body.is-printing-resume .resume-screen-fit,
