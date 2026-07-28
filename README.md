@@ -9,7 +9,8 @@ The site contains:
 - 20 intake questions whose answers save in the browser
 - 50 TrueUp role dossiers split into a priority shortlist and explicit stretch / blocked leads
 - an auditable methodology ledger covering resume extraction, all 15 TrueUp searches, scoring, limitations, and verification
-- a verbatim archive of Byron's five project prompts, embedded directly in the static HTML
+- a verbatim archive of Byron's six project prompts, embedded directly in the static HTML
+- a recruiter-derived five-second scan standard applied across all 10 resume directions
 - privacy-safe public contact placeholders
 
 ## Preview

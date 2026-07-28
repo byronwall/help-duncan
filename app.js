@@ -15,13 +15,6 @@ function renderBullets(items) {
 }
 
 function renderResume(variant, preview = false) {
-  const project = variant.project
-    ? `<section class="resume-block">
-        <h4>SELECTED TECHNICAL WORK</h4>
-        <p class="resume-project">${escapeHtml(variant.project)}</p>
-      </section>`
-    : "";
-
   return `
     <article class="resume-page${preview ? " is-preview" : ""}" data-resume-id="${escapeHtml(variant.id)}">
       <header class="resume-page__header">
@@ -32,10 +25,6 @@ function renderResume(variant, preview = false) {
       <section class="resume-block">
         <h4>PROFESSIONAL SUMMARY</h4>
         <p class="resume-summary">${escapeHtml(variant.summary)}</p>
-      </section>
-      <section class="resume-block">
-        <h4>CORE SKILLS</h4>
-        <p class="resume-skills">${escapeHtml(variant.skills)}</p>
       </section>
       <section class="resume-block">
         <h4>PROFESSIONAL EXPERIENCE</h4>
@@ -61,7 +50,10 @@ function renderResume(variant, preview = false) {
           ${renderBullets(variant.operations)}
         </div>
       </section>
-      ${project}
+      <section class="resume-block">
+        <h4>CORE SKILLS</h4>
+        <p class="resume-skills">${escapeHtml(variant.skills)}</p>
+      </section>
       <section class="resume-block">
         <h4>EDUCATION</h4>
         <div class="resume-education">
@@ -158,7 +150,17 @@ function openResume(id) {
   resumeDialogTitle.textContent = `${variant.label} — ${variant.target}`;
   resumeDialogBody.innerHTML = `
     <div class="resume-direction-note">
-      <strong>Why this direction:</strong> ${escapeHtml(variant.rationale)}
+      <p><strong>Why this direction:</strong> ${escapeHtml(variant.rationale)}</p>
+      <dl>
+        <div>
+          <dt>Editorial move</dt>
+          <dd>${escapeHtml(variant.editorialMove)}</dd>
+        </div>
+        <div>
+          <dt>Impact to verify</dt>
+          <dd>${escapeHtml(variant.impactPrompt)}</dd>
+        </div>
+      </dl>
     </div>
     <div class="resume-screen-fit">
       <div class="resume-scale-stage">${renderResume(variant)}</div>

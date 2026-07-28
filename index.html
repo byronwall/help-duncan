@@ -131,10 +131,30 @@ FORM: An application-operations runbook with an edge-to-edge comparison workbenc
             <h2 id="resumes-title">Ten one-page resume directions</h2>
           </div>
           <p>
-            Each version uses the same source experience. What changes is the lead story, bullet
-            selection, and keyword emphasis. Click any sheet to inspect it at full size.
+            Each version uses the same source experience and the same five-second scan standard.
+            What changes is the lead story, proof selection, and keyword emphasis. Click any sheet
+            to inspect the resume and its editor brief at full size.
           </p>
         </div>
+        <aside class="scan-standard" aria-labelledby="scan-standard-title">
+          <div>
+            <p class="section-kicker">Applied to all 10</p>
+            <h3 id="scan-standard-title">The five-second scan standard</h3>
+            <p>
+              Treat every row as scarce. A human should understand the story from the first line of
+              each bullet without zooming in or rereading.
+            </p>
+          </div>
+          <ol class="scan-rules">
+            <li><strong>One page.</strong><span>Use readable type; never solve density by shrinking it.</span></li>
+            <li><strong>No accidental wraps.</strong><span>Headlines, skills, and bullets each earn one line.</span></li>
+            <li><strong>One idea per bullet.</strong><span>Cut to the useful claim or split the thought.</span></li>
+            <li><strong>Experience first.</strong><span>Use a two-line summary, then work history; skills sit near the bottom.</span></li>
+            <li><strong>Remove duplicate proof.</strong><span>Technical projects now live inside the experience that produced them.</span></li>
+            <li><strong>Verify impact.</strong><span>Add real dollars, users, frequency, time saved, or error reduction—never invented metrics.</span></li>
+            <li><strong>Write for people.</strong><span>ATS keywords remain a compact backstop, not the organizing principle.</span></li>
+          </ol>
+        </aside>
         <div id="resume-contact-sheet" class="resume-contact-sheet" aria-live="polite"></div>
       </section>
 
@@ -258,10 +278,12 @@ FORM: An application-operations runbook with an edge-to-edge comparison workbenc
             <div>
               <h3>Built ten positioning directions from the same facts</h3>
               <p>
-                Re-selected and tightened source bullets for balanced data engineering, governance,
-                SQL/ETL, analytics engineering, data quality, regulated data, integration, BI,
-                automation, and ATS-minimal versions. No new employers, responsibilities, outcomes,
-                or performance metrics were added.
+                Rebuilt balanced data engineering, governance, SQL/ETL, analytics engineering, data
+                quality, regulated data, integration, BI, automation, and ATS-minimal versions
+                around a five-second recruiter scan. Every direction uses readable type, a two-line
+                summary, experience before skills, one-idea bullets, and technical projects woven
+                into work history. No new employers, responsibilities, outcomes, or metrics were
+                added.
               </p>
             </div>
             <span class="method-ledger__status">Editorial rewrite</span>
@@ -423,6 +445,67 @@ Also be sure to include a list of 20 questions for him to answer in the static s
             <pre><code>And then whne this is all done, be sure to add my exact prompts to the static HTML file too.
 
 Also include a "methodology" section that breaks down all of the various searches and other things you did on our behalf.</code></pre>
+          </article>
+
+          <article class="prompt-record">
+            <header><span>Prompt 06</span><strong>Resume editing guidance</strong></header>
+            <pre><code>Finally, review all my guidance below about reusme and make sure it's incorporated into the 10 suggestiosn in the pages.&#32;
+---
+Resume
+Second message: improving your resume
+
+You probably need to get it down to 1 page of slightly larger text.  The small text and second page are working against you.
+
+My golden rule is that you should treat every row of text as a scarce resource.  Do not “give up” lines accidentally.&#32;&#32;
+
+(I used to do campus recruiting at CPChem and some at Allison too.  I’ve read 100s-1000s of engineering resumes)
+
+Spots where I see lines being “given up”:
+- 3rd line of skills “INGESTION” spills to its own line
+- Summary is 7 lines.  Aim for 2 or 3
+- Technical skills section “automated refresh workflows” and some of the left side headers spill
+
+Also, for lines in a resume, I think you should really seek to avoid any line breaks in content.  The exception is maybe the summary section if you’re writing real sentences.
+
+When people scan a resume, they basically see “lines” of content.  If your reader needs to come back to the start of a line, they lose track of what they were reading.  This is even harder with small font.
+
+So, assume your reader will only consume the first line of each bullet point.  Do they still make sense?
+
+The answer then: find any bullet that breaks across lines and just require “this must fit in one line”.
+
+How:
+- Reduce the words down to the bare essentials for whatever you want to convey
+- Identify when you’re saying more than 1 thing and just create 2 bullets out of it
+
+Unfortunately, we think “I need to say this too!” but the result is a resume that is really hard to read at a glance.&#32;&#32;
+
+Back when I did campus recruiting at job fairs, we’d scan a resume in like 5 seconds.  Top to bottom.  If it was well structured you could basically have a good feel for the candidate at a glance.  From there, you’d guess what the most useful question would be to get the candidate to talk for 2 minutes or so.
+
+When I reviewed resumes at Allison, it was a similar process but we’d get a stack of resumes in a single PDF.  Basically you’re scrolling through them all  and stopping when it gets interesting.  I’d sometimes print them all just to recover the “job fair quick review” process.  But the “review” always started with some quick glance through a large pile.
+
+I don’t know exactly how to balance that “made for a human to glance” approach vs. the “load it with words for an AI to review”.  My guess is that your best bet is to have a really awesome resume that you can send to humans.
+
+My first thought opening yours was that it was really small and hard to read.  I zoomed in to start reading but now the lines are filling the full page and harder to read quickly.  So I’d really improve that angle.
+
+For the content, I’d work to de-duplicate the lines and make sure that every line is saying something new and useful.  Take some editorial liberties.  My strategy was to take every Skill and make sure it was reference in a bullet point.  Once you do that, you may as well remove the skills section.  I never had the conviction to do it though. I was too concerned that an ATS might really need it.
+
+I would also add a few more words about the impact of your work.  Specifically if you have any $ amounts or anything numeric.&#32;&#32;
+
+Examples
+- “improving consistency, lineage, data definitions, and long-term maintainability.” = 2x shorter SQL statements with better JOINs (Ha! I’m struggling to name one quickly here)
+- “that support scalable reporting and product data use.” = supporting dashboards used daily by multiple executives… or whatever is true.
+
+This is an area where AI is really good at helping you find words that are good once you see them but hard to come up with naturally.
+
+And you should probably get that “Additional Tech projects” weaved into your main experience.  I can’t tell if it’s personal or work.  In either case, it all reads work like, so just get it into your main experience bullets, especially the stuff about Claude and Copilot.
+
+Here’s my resume: https://byroni.us/resume_byron_wall.pdf. With fresh eyes, it mostly holds up.
+
+I don’t know why I left the Skills section at the top of my resume though.  I generally think it looks better at the bottom.  At a job fair, I always preferred when job experience was at the very top, just below a quick summary.
+
+I also wasted space on my resume by including a line for an internship 15 years ago.
+
+I was working hard on that resume because I was trying to weave a story of being a senior programmer while working Engineering roles for 15 years.  I was only full time programming for like 2 years.  I had being doing programming stuff throughout, so I was trying emphasize that and remove all the “raw” engineering content.  Regardless, I worked hard so that every line conveyed something I thought was useful.</code></pre>
           </article>
         </div>
       </section>

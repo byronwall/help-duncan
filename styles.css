@@ -481,6 +481,52 @@ body.is-ready .opening-workbench > :nth-child(3) {
   line-height: 1.6;
 }
 
+.scan-standard {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(480px, 1fr);
+  gap: 34px;
+  margin-top: 38px;
+  padding: 24px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.scan-standard h3 {
+  margin: 4px 0 8px;
+  font-size: 1.45rem;
+}
+
+.scan-standard > div > p:last-child {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.scan-rules {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.scan-rules li {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.scan-rules strong {
+  font-size: 0.8rem;
+}
+
+.scan-rules span {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
 .resume-contact-sheet {
   display: grid;
   grid-template-columns: repeat(auto-fill, 204px);
@@ -556,8 +602,8 @@ body.is-ready .opening-workbench > :nth-child(3) {
   color: #111827;
   background: var(--sheet);
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 10.2pt;
-  line-height: 1.2;
+  font-size: 11.3pt;
+  line-height: 1.22;
   overflow: hidden;
 }
 
@@ -586,18 +632,19 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
 .resume-contact {
   margin: 3px 0 4px;
-  font-size: 9.1pt;
+  font-size: 9.8pt;
 }
 
 .resume-headline {
   margin: 0;
   color: #203a5f;
   font-weight: 800;
-  font-size: 10pt;
+  font-size: 10.8pt;
+  white-space: nowrap;
 }
 
 .resume-block {
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 .resume-block h4 {
@@ -615,12 +662,20 @@ body.is-ready .opening-workbench > :nth-child(3) {
   margin: 0;
 }
 
+.resume-summary {
+  max-width: 74ch;
+}
+
+.resume-skills {
+  white-space: nowrap;
+}
+
 .resume-skills strong {
   color: #203a5f;
 }
 
 .resume-role {
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .resume-role__line {
@@ -640,8 +695,9 @@ body.is-ready .opening-workbench > :nth-child(3) {
 }
 
 .resume-role li {
-  margin: 0 0 2px;
+  margin: 0 0 1.5px;
   padding-left: 1px;
+  white-space: nowrap;
 }
 
 .resume-education {
@@ -1316,6 +1372,35 @@ body.is-ready .opening-workbench > :nth-child(3) {
   font-size: 0.82rem;
 }
 
+.resume-direction-note p {
+  margin: 0;
+}
+
+.resume-direction-note dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.resume-direction-note dl div {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.resume-direction-note dt {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.resume-direction-note dd {
+  margin: 0;
+}
+
 .dialog-resume-body .resume-page {
   box-shadow: 9px 10px 0 var(--folder-dark);
 }
@@ -1419,8 +1504,13 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
   .opening-header,
   .section-heading,
-  .opening-workbench {
+  .opening-workbench,
+  .scan-standard {
     grid-template-columns: 1fr;
+  }
+
+  .scan-standard {
+    gap: 22px;
   }
 
   .opening-proof {
@@ -1473,6 +1563,10 @@ body.is-ready .opening-workbench > :nth-child(3) {
   .prompt-record header {
     position: static;
   }
+
+  .resume-direction-note dl {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1506,6 +1600,12 @@ body.is-ready .opening-workbench > :nth-child(3) {
 
   .search-query-row > span:last-child {
     grid-column: 1 / -1;
+  }
+
+  .scan-rules li,
+  .resume-direction-note dl div {
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 
   .search-query-row--head span:last-child {
